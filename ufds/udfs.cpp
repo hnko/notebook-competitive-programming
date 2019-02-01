@@ -2,7 +2,20 @@
     Applications:
         - connected components in a graph
         - detect cycle in a undirected graph -> there is a cycle if x and y are in the same set
-    
+        
+        -> if the want to implement move just:
+            1. double the array size
+            2. create a idx[MAX] -> initializate as we do with p[]
+            3. create a count = N + 1
+            3. everytime we refer with idx[i]
+            4. move function looks like this:
+                void move(int a, int b){
+                    int x = find(idx[a]), y = find(idx[b]);
+                    if(x != y){
+                        idx[a] = cnt++;
+                        p[idx[a]] = y;
+                    }
+                }
 
 
 */
